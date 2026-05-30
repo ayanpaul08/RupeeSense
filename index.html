@@ -75,26 +75,26 @@ nav{background:rgba(237,245,242,0.95);border-bottom:1px solid var(--border);padd
 
 /* ── FEATURED CARD (tax article — live) ── */
 .featured-wrap{max-width:860px;margin:0 auto;padding:0 40px;margin-bottom:56px;}
-.card-featured{background:var(--card);border-radius:20px;border:1px solid var(--border);overflow:hidden;text-decoration:none;color:inherit;display:grid;grid-template-columns:1fr 1fr;transition:transform 0.2s,box-shadow 0.2s;}
+.card-featured{background:var(--card);border-radius:20px;border:1px solid var(--border);overflow:hidden;text-decoration:none;color:inherit;display:grid;grid-template-columns:5fr 6fr;transition:transform 0.2s,box-shadow 0.2s;}
 .card-featured:hover{transform:translateY(-3px);box-shadow:0 14px 44px rgba(14,122,90,0.11);}
-.cf-visual{background:linear-gradient(135deg,#D6EFE4 0%,#C0E4D4 100%);padding:40px;display:flex;flex-direction:column;justify-content:space-between;min-height:280px;position:relative;overflow:hidden;}
-.cf-visual-bg{position:absolute;right:-20px;bottom:-30px;font-family:'Playfair Display',serif;font-size:160px;font-weight:900;color:rgba(14,122,90,0.08);line-height:1;pointer-events:none;user-select:none;}
-.cf-live-badge{display:inline-flex;align-items:center;gap:6px;background:var(--g1);color:#fff;font-size:11px;font-weight:600;letter-spacing:0.8px;padding:5px 12px;border-radius:20px;width:fit-content;}
+.cf-visual{background:linear-gradient(135deg,#D6EFE4 0%,#C0E4D4 100%);padding:36px 32px;display:flex;flex-direction:column;justify-content:space-between;min-height:300px;position:relative;overflow:hidden;min-width:0;}
+.cf-visual-bg{position:absolute;right:-10px;bottom:-20px;font-family:'Playfair Display',serif;font-size:130px;font-weight:900;color:rgba(14,122,90,0.10);line-height:1;pointer-events:none;user-select:none;}
+.cf-live-badge{display:inline-flex;align-items:center;gap:6px;background:var(--g1);color:#fff;font-size:11px;font-weight:600;letter-spacing:0.8px;padding:5px 12px;border-radius:20px;width:fit-content;margin-bottom:0;}
 .cf-live-dot{width:6px;height:6px;border-radius:50%;background:#6FD9A8;flex-shrink:0;}
-.cf-visual-rx{font-family:'DM Sans',sans-serif;font-size:56px;font-weight:800;color:var(--g1);line-height:1;z-index:1;}
-.cf-visual-rx span{color:var(--orange);font-size:32px;vertical-align:sub;}
-.cf-body{padding:36px 32px;display:flex;flex-direction:column;justify-content:space-between;}
-.cf-tag-row{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;}
+.cf-visual-rx{font-family:'DM Sans',sans-serif;font-size:52px;font-weight:800;color:var(--g1);line-height:1;z-index:1;margin-top:auto;}
+.cf-visual-rx span{color:var(--orange);font-size:30px;vertical-align:sub;}
+.cf-body{padding:32px 28px;display:flex;flex-direction:column;gap:0;background:var(--card);min-width:0;overflow:hidden;}
+.cf-tag-row{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;align-items:flex-start;}
 .cf-tag{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:20px;}
 .cf-tag.green{background:var(--new-bg);color:#085041;}
 .cf-tag.orange{background:var(--orange-bg);color:#7A2F0A;}
-.cf-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--text);line-height:1.3;margin-bottom:12px;letter-spacing:-0.3px;}
-.cf-excerpt{font-size:14px;color:var(--soft);line-height:1.7;margin-bottom:24px;font-weight:300;}
-.cf-meta{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--soft);}
+.cf-title{font-family:'Playfair Display',serif;font-size:21px;font-weight:700;color:var(--text);line-height:1.35;margin-bottom:12px;letter-spacing:-0.3px;word-wrap:break-word;overflow-wrap:break-word;}
+.cf-excerpt{font-size:14px;color:var(--soft);line-height:1.7;margin-bottom:16px;font-weight:300;flex:1;word-wrap:break-word;overflow-wrap:break-word;}
+.cf-meta{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--soft);flex-wrap:wrap;}
 .cf-meta-dot{width:3px;height:3px;border-radius:50%;background:var(--soft);}
-.cf-read-btn{display:inline-block;background:var(--g1);color:#fff;padding:11px 22px;border-radius:20px;font-size:13px;font-weight:600;text-decoration:none;margin-top:20px;width:fit-content;transition:opacity 0.2s;}
+.cf-read-btn{display:inline-block;background:var(--g1);color:#fff;padding:11px 22px;border-radius:20px;font-size:13px;font-weight:600;text-decoration:none;margin-top:20px;width:fit-content;transition:opacity 0.2s;flex-shrink:0;}
 .cf-read-btn:hover{opacity:0.85;}
-@media(max-width:640px){.card-featured{grid-template-columns:1fr;}.cf-visual{min-height:160px;padding:28px;}.cf-body{padding:24px;}}
+@media(max-width:640px){.card-featured{grid-template-columns:1fr;}.cf-visual{min-height:160px;padding:24px;}.cf-body{padding:24px;}}
 
 /* ── UPCOMING CARDS GRID ── */
 .cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:56px;}
@@ -102,7 +102,13 @@ nav{background:rgba(237,245,242,0.95);border-bottom:1px solid var(--border);padd
 .card-upcoming:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(14,122,90,0.09);}
 .card-upcoming.coming{opacity:0.7;cursor:default;}
 .card-upcoming.coming:hover{transform:none;box-shadow:none;}
-.cu-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.cu-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;font-weight:700;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:0.5px;}
+.cu-lbl.orange{color:#7A2F0A;}
+.cu-lbl.pink{color:#8C2042;}
+.cu-lbl.blue{color:#0C447C;}
+.cu-lbl.teal{color:#1A6B64;}
+.cu-lbl.purple{color:#4A3D9A;}
+.cu-lbl.green{color:#085041;}
 .cu-icon.green{background:var(--new-bg);}
 .cu-icon.blue{background:var(--old-bg);}
 .cu-icon.orange{background:var(--orange-bg);}
@@ -162,14 +168,14 @@ nav{background:rgba(237,245,242,0.95);border-bottom:1px solid var(--border);padd
 @media(max-width:640px){.newsletter-card{flex-direction:column;padding:28px 24px;}.nl-form{flex-direction:column;width:100%;}.nl-input{width:100%;}.newsletter-wrap{padding:40px 16px;}}
 
 /* ── HOW IT WORKS ── */
-.how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-bottom:56px;background:var(--card);border-radius:var(--r);border:1px solid var(--border);overflow:hidden;}
-.how-step{padding:28px 24px;border-right:1px solid var(--border);position:relative;}
+.how-flow{display:flex;align-items:stretch;gap:0;margin-bottom:56px;background:var(--card);border-radius:var(--r);border:1px solid var(--border);overflow:hidden;}
+.how-step{padding:28px 24px;flex:1;position:relative;display:flex;flex-direction:column;gap:6px;border-right:1px solid var(--border);}
 .how-step:last-child{border-right:none;}
-.how-num{font-family:'DM Mono',monospace;font-size:28px;font-weight:500;color:rgba(14,122,90,0.2);display:block;margin-bottom:12px;line-height:1;}
-.how-icon{font-size:22px;display:block;margin-bottom:10px;}
-.how-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:6px;}
+.how-step:not(:last-child)::after{content:"\2192";position:absolute;right:-12px;top:50%;transform:translateY(-50%);font-size:18px;font-weight:700;color:var(--orange);z-index:2;background:var(--card);padding:2px;}
+.how-kicker{font-size:10px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--orange);}
+.how-title{font-size:16px;font-weight:700;color:var(--text);font-family:'Playfair Display',serif;letter-spacing:-0.2px;}
 .how-desc{font-size:13px;color:var(--soft);line-height:1.55;font-weight:300;}
-@media(max-width:640px){.how-grid{grid-template-columns:1fr 1fr;}.how-step{border-right:1px solid var(--border);border-bottom:1px solid var(--border);}.how-step:nth-child(2n){border-right:none;}.how-step:nth-child(3),.how-step:nth-child(4){border-bottom:none;}}
+@media(max-width:640px){.how-flow{flex-direction:column;}.how-step{border-right:none;border-bottom:1px solid var(--border);}.how-step:last-child{border-bottom:none;}.how-step:not(:last-child)::after{content:"\2193";right:auto;left:50%;top:auto;bottom:-14px;transform:translateX(-50%);background:var(--card);}}
 
 /* ── FOOTER ── */
 footer{background:var(--text);padding:40px;color:rgba(255,255,255,0.5);font-size:13px;}
@@ -231,32 +237,28 @@ footer{background:var(--text);padding:40px;color:rgba(255,255,255,0.5);font-size
 <div class="section-wrap" id="about">
   <div class="section-label-sm">Our format</div>
   <div class="section-hdr" style="margin-bottom:20px;">
-    <div class="section-title">Every article follows this structure</div>
+    <div class="section-title">How every RupeeSense article is built</div>
   </div>
-  <div class="how-grid">
+  <div class="how-flow">
     <div class="how-step">
-      <span class="how-num">01</span>
-      <span class="how-icon">💡</span>
+      <div class="how-kicker">We expose</div>
       <div class="how-title">The Myth</div>
-      <div class="how-desc">We start with the popular belief — the thing most people assume to be true about money.</div>
+      <div class="how-desc">A popular belief most Indians hold about money — presented plainly, without judgment.</div>
     </div>
     <div class="how-step">
-      <span class="how-num">02</span>
-      <span class="how-icon">👤</span>
+      <div class="how-kicker">We narrate</div>
       <div class="how-title">The Story</div>
-      <div class="how-desc">A hypothetical Indian household. Real names, real incomes, real decisions — the kind you recognise from your own life.</div>
+      <div class="how-desc">A real Indian household, a familiar situation, and a money decision that feels completely normal.</div>
     </div>
     <div class="how-step">
-      <span class="how-num">03</span>
-      <span class="how-icon">🧮</span>
+      <div class="how-kicker">We calculate</div>
       <div class="how-title">The Math</div>
-      <div class="how-desc">We run the actual numbers in rupees. No vague percentages. No "it depends". Just the calculation.</div>
+      <div class="how-desc">Actual rupee numbers. No "it depends". No estimates. The exact cost of the myth, calculated.</div>
     </div>
     <div class="how-step">
-      <span class="how-num">04</span>
-      <span class="how-icon">✅</span>
-      <div class="how-title">What to Do</div>
-      <div class="how-desc">The lesson and the action. Clear, specific, and applicable — so you leave knowing exactly what to do next.</div>
+      <div class="how-kicker">We prescribe</div>
+      <div class="how-title">What to Do Instead</div>
+      <div class="how-desc">A clear, specific action you can take this week — no jargon, no CA required.</div>
     </div>
   </div>
 </div>
@@ -275,21 +277,19 @@ footer{background:var(--text);padding:40px;color:rgba(255,255,255,0.5);font-size
       <div class="cf-visual-bg">Tax</div>
     </div>
     <div class="cf-body">
-      <div>
-        <div class="cf-tag-row">
-          <span class="cf-tag green">Income Tax</span>
-          <span class="cf-tag orange">Myth Bust</span>
-          <span class="cf-tag green">Calculator Inside</span>
-        </div>
-        <div class="cf-title">Old vs New Tax Regime — Which one actually saves you money?</div>
-        <div class="cf-excerpt">Every year millions of Indians overpay tax simply because nobody showed them the numbers. This article compares both regimes with real scenarios, a full slab breakdown, and a free calculator — for salaried employees and freelancers both.</div>
-        <div class="cf-meta">
-          <span>12 min read</span>
-          <span class="cf-meta-dot"></span>
-          <span>FY 2025-26</span>
-          <span class="cf-meta-dot"></span>
-          <span>ITR deadline: July 31</span>
-        </div>
+      <div class="cf-tag-row">
+        <span class="cf-tag green">Income Tax</span>
+        <span class="cf-tag orange">Myth Bust</span>
+        <span class="cf-tag green">Calculator Inside</span>
+      </div>
+      <div class="cf-title">Old vs New Tax Regime — Which one actually saves you money?</div>
+      <div class="cf-excerpt">Every year millions of Indians overpay tax simply because nobody showed them the numbers. This article compares both regimes with real scenarios, a full slab breakdown, and a free calculator — for salaried employees and freelancers both.</div>
+      <div class="cf-meta">
+        <span>12 min read</span>
+        <span class="cf-meta-dot"></span>
+        <span>FY 2025-26</span>
+        <span class="cf-meta-dot"></span>
+        <span>ITR deadline: July 31</span>
       </div>
       <a href="articles/old-vs-new-regime.html" class="cf-read-btn">Read the Article →</a>
     </div>
@@ -307,7 +307,7 @@ footer{background:var(--text);padding:40px;color:rgba(255,255,255,0.5);font-size
 
     <div class="card-upcoming coming">
       <div class="coming-pill">Coming soon</div>
-      <div class="cu-icon orange">💰</div>
+      <div class="cu-icon orange cu-lbl">FD</div>
       <span class="cu-tag orange">Savings</span>
       <div class="cu-title">Your FD is "Safe" — but safe from what, exactly?</div>
       <div class="cu-excerpt">Meet Ramesh. He put ₹1,00,000 in an FD at 6.5% while inflation ran at 6%. Ten years later the math tells a story no bank ever will.</div>
@@ -315,7 +315,7 @@ footer{background:var(--text);padding:40px;color:rgba(255,255,255,0.5);font-size
 
     <div class="card-upcoming coming">
       <div class="coming-pill">Coming soon</div>
-      <div class="cu-icon pink">🛡️</div>
+      <div class="cu-icon pink cu-lbl">LIC</div>
       <span class="cu-tag pink">Insurance</span>
       <div class="cu-title">LIC endowment plans — the math nobody shows you</div>
       <div class="cu-excerpt">Your agent called it "investment plus insurance". Run the numbers and find out what it actually is — and what term plus MF would have done instead.</div>
@@ -323,7 +323,7 @@ footer{background:var(--text);padding:40px;color:rgba(255,255,255,0.5);font-size
 
     <div class="card-upcoming coming">
       <div class="coming-pill">Coming soon</div>
-      <div class="cu-icon blue">🏠</div>
+      <div class="cu-icon blue cu-lbl">RE</div>
       <span class="cu-tag blue">Real Estate</span>
       <div class="cu-title">Renting vs Buying — the hidden costs nobody tells you</div>
       <div class="cu-excerpt">Owning a home is the Indian dream. But what does it actually cost per month when you add stamp duty, maintenance, and opportunity cost?</div>
@@ -331,7 +331,7 @@ footer{background:var(--text);padding:40px;color:rgba(255,255,255,0.5);font-size
 
     <div class="card-upcoming coming">
       <div class="coming-pill">Coming soon</div>
-      <div class="cu-icon teal">📈</div>
+      <div class="cu-icon teal cu-lbl">SIP</div>
       <span class="cu-tag teal">Investing</span>
       <div class="cu-title">SIP is not "safe" — here is what that actually means</div>
       <div class="cu-excerpt">Everyone says start a SIP. Almost nobody explains what can go wrong and why understanding risk is not the same as avoiding it.</div>
@@ -339,7 +339,7 @@ footer{background:var(--text);padding:40px;color:rgba(255,255,255,0.5);font-size
 
     <div class="card-upcoming coming">
       <div class="coming-pill">Coming soon</div>
-      <div class="cu-icon purple">💳</div>
+      <div class="cu-icon purple cu-lbl">EMI</div>
       <span class="cu-tag purple">Debt</span>
       <div class="cu-title">EMI psychology — how ₹5,000 per month hides the real cost</div>
       <div class="cu-excerpt">The EMI feels small. The total interest paid does not. We break down what that phone, bike, or sofa actually cost you over 24 months.</div>
@@ -347,7 +347,7 @@ footer{background:var(--text);padding:40px;color:rgba(255,255,255,0.5);font-size
 
     <div class="card-upcoming coming">
       <div class="coming-pill">Coming soon</div>
-      <div class="cu-icon green">🧠</div>
+      <div class="cu-icon green cu-lbl">PSY</div>
       <span class="cu-tag green">Money Psychology</span>
       <div class="cu-title">Lifestyle inflation — why raises never make you feel richer</div>
       <div class="cu-excerpt">You got a 30% hike. Your savings did not move. Here is the compound cost of upgrading your lifestyle every time your income goes up.</div>
@@ -363,14 +363,14 @@ footer{background:var(--text);padding:40px;color:rgba(255,255,255,0.5);font-size
     <div class="section-title">What we cover</div>
   </div>
   <div class="topic-chips">
-    <span class="topic-chip tc-orange">💰 Savings & Banking</span>
-    <span class="topic-chip tc-teal">📈 Investing</span>
-    <span class="topic-chip tc-blue">🏠 Real Estate</span>
-    <span class="topic-chip tc-green">🧾 Income Tax</span>
-    <span class="topic-chip tc-pink">🛡️ Insurance</span>
-    <span class="topic-chip tc-purple">💳 Debt & EMIs</span>
-    <span class="topic-chip tc-teal">🧠 Money Psychology</span>
-    <span class="topic-chip tc-blue">🏦 Macro & Economy</span>
+    <span class="topic-chip tc-orange">Savings & Banking</span>
+    <span class="topic-chip tc-teal">Investing</span>
+    <span class="topic-chip tc-blue">Real Estate</span>
+    <span class="topic-chip tc-green">Income Tax</span>
+    <span class="topic-chip tc-pink">Insurance</span>
+    <span class="topic-chip tc-purple">Debt & EMIs</span>
+    <span class="topic-chip tc-teal">Money Psychology</span>
+    <span class="topic-chip tc-blue">Macro & Economy</span>
   </div>
 </div>
 
