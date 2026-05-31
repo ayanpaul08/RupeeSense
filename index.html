@@ -75,26 +75,32 @@ nav{background:rgba(237,245,242,0.95);border-bottom:1px solid var(--border);padd
 
 /* ── FEATURED CARD (tax article — live) ── */
 .featured-wrap{max-width:860px;margin:0 auto;padding:0 40px;margin-bottom:56px;}
-.card-featured{background:var(--card);border-radius:20px;border:1px solid var(--border);overflow:hidden;text-decoration:none;color:inherit;display:grid;grid-template-columns:5fr 6fr;transition:transform 0.2s,box-shadow 0.2s;}
+.card-featured{background:var(--card);border-radius:20px;border:1px solid var(--border);overflow:hidden;text-decoration:none;color:inherit;display:table;width:100%;transition:transform 0.2s,box-shadow 0.2s;}
 .card-featured:hover{transform:translateY(-3px);box-shadow:0 14px 44px rgba(14,122,90,0.11);}
-.cf-visual{background:linear-gradient(135deg,#D6EFE4 0%,#C0E4D4 100%);padding:36px 32px;display:flex;flex-direction:column;justify-content:space-between;min-height:300px;position:relative;overflow:hidden;min-width:0;}
-.cf-visual-bg{position:absolute;right:-10px;bottom:-20px;font-family:'Playfair Display',serif;font-size:130px;font-weight:900;color:rgba(14,122,90,0.10);line-height:1;pointer-events:none;user-select:none;}
-.cf-live-badge{display:inline-flex;align-items:center;gap:6px;background:var(--g1);color:#fff;font-size:11px;font-weight:600;letter-spacing:0.8px;padding:5px 12px;border-radius:20px;width:fit-content;margin-bottom:0;}
+.cf-visual{display:table-cell;width:38%;background:linear-gradient(135deg,#D6EFE4 0%,#C0E4D4 100%);padding:32px;vertical-align:bottom;position:relative;overflow:hidden;}
+.cf-visual-bg{position:absolute;right:-10px;bottom:-20px;font-family:'Playfair Display',serif;font-size:120px;font-weight:900;color:rgba(14,122,90,0.10);line-height:1;pointer-events:none;user-select:none;}
+.cf-live-badge{display:inline-flex;align-items:center;gap:6px;background:var(--g1);color:#fff;font-size:11px;font-weight:600;letter-spacing:0.8px;padding:5px 12px;border-radius:20px;position:absolute;top:28px;left:28px;}
 .cf-live-dot{width:6px;height:6px;border-radius:50%;background:#6FD9A8;flex-shrink:0;}
-.cf-visual-rx{font-family:'DM Sans',sans-serif;font-size:52px;font-weight:800;color:var(--g1);line-height:1;z-index:1;margin-top:auto;}
+.cf-visual-rx{font-family:'DM Sans',sans-serif;font-size:52px;font-weight:800;color:var(--g1);line-height:1;position:relative;z-index:1;padding-top:60px;}
 .cf-visual-rx span{color:var(--orange);font-size:30px;vertical-align:sub;}
-.cf-body{padding:32px 28px;display:flex;flex-direction:column;gap:0;background:var(--card);min-width:0;overflow:hidden;}
-.cf-tag-row{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;align-items:flex-start;}
+.cf-body{display:table-cell;width:62%;padding:28px 28px 28px 32px;vertical-align:top;background:var(--card);}
+.cf-tag-row{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;}
 .cf-tag{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:20px;}
 .cf-tag.green{background:var(--new-bg);color:#085041;}
 .cf-tag.orange{background:var(--orange-bg);color:#7A2F0A;}
-.cf-title{font-family:'Playfair Display',serif;font-size:21px;font-weight:700;color:var(--text);line-height:1.35;margin-bottom:12px;letter-spacing:-0.3px;word-wrap:break-word;overflow-wrap:break-word;}
-.cf-excerpt{font-size:14px;color:var(--soft);line-height:1.7;margin-bottom:16px;font-weight:300;flex:1;word-wrap:break-word;overflow-wrap:break-word;}
+.cf-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--text);line-height:1.35;margin-bottom:12px;letter-spacing:-0.3px;}
+.cf-excerpt{font-size:14px;color:var(--soft);line-height:1.7;margin-bottom:16px;font-weight:300;}
 .cf-meta{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--soft);flex-wrap:wrap;}
 .cf-meta-dot{width:3px;height:3px;border-radius:50%;background:var(--soft);}
-.cf-read-btn{display:inline-block;background:var(--g1);color:#fff;padding:11px 22px;border-radius:20px;font-size:13px;font-weight:600;text-decoration:none;margin-top:20px;width:fit-content;transition:opacity 0.2s;flex-shrink:0;}
+.cf-read-btn{display:inline-block;background:var(--g1);color:#fff;padding:11px 22px;border-radius:20px;font-size:13px;font-weight:600;text-decoration:none;margin-top:18px;transition:opacity 0.2s;}
 .cf-read-btn:hover{opacity:0.85;}
-@media(max-width:640px){.card-featured{grid-template-columns:1fr;}.cf-visual{min-height:160px;padding:24px;}.cf-body{padding:24px;}}
+@media(max-width:640px){
+  .card-featured{display:block;}
+  .cf-visual{display:block;width:100%;padding:24px 24px 24px 24px;min-height:160px;}
+  .cf-live-badge{top:20px;left:20px;}
+  .cf-visual-rx{padding-top:48px;font-size:40px;}
+  .cf-body{display:block;width:100%;padding:24px;box-sizing:border-box;}
+}
 
 /* ── UPCOMING CARDS GRID ── */
 .cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:56px;}
@@ -282,8 +288,8 @@ footer{background:var(--text);padding:40px;color:rgba(255,255,255,0.5);font-size
         <span class="cf-tag orange">Myth Bust</span>
         <span class="cf-tag green">Calculator Inside</span>
       </div>
-      <div class="cf-title">Old vs New Tax Regime — Which one actually saves you money?</div>
-      <div class="cf-excerpt">Every year millions of Indians overpay tax simply because nobody showed them the numbers. This article compares both regimes with real scenarios, a full slab breakdown, and a free calculator — for salaried employees and freelancers both.</div>
+      <div class="cf-title">Old vs New Tax Regime: Which one actually saves you money?</div>
+      <div class="cf-excerpt">Every year millions of Indians overpay tax simply because nobody showed them the numbers. This article compares both regimes with real scenarios, a full slab breakdown, and a free calculator, for salaried employees and freelancers both.</div>
       <div class="cf-meta">
         <span>12 min read</span>
         <span class="cf-meta-dot"></span>
@@ -291,7 +297,7 @@ footer{background:var(--text);padding:40px;color:rgba(255,255,255,0.5);font-size
         <span class="cf-meta-dot"></span>
         <span>ITR deadline: July 31</span>
       </div>
-      <a href="articles/old-vs-new-regime.html" class="cf-read-btn">Read the Article →</a>
+      <span class="cf-read-btn">Read the Article →</span>
     </div>
   </a>
 </div>
