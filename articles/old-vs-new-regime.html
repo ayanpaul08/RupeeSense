@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="Old vs New Tax Regime FY 2025-26 — scenario-based guide with calculator. Find out which regime saves you more money with real numbers."/>
+<meta name="description" content="Old vs New Tax Regime FY 2025-26, scenario-based guide with calculator. Find out which regime saves you more money with real numbers."/>
 <title>Old vs New Tax Regime: Which Saves You More? | RupeeSense</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
@@ -28,6 +28,7 @@
   --old-text:#0C447C;
   --warn-bg:#FAEEDA;
   --warn-text:#633806;
+  --orange:#E8602C;
 }
 
 body{background:var(--base);font-family:'DM Sans',sans-serif;color:var(--text);line-height:1.6;}
@@ -53,6 +54,7 @@ nav{background:rgba(237,245,242,0.95);border-bottom:1px solid var(--border);padd
 .meta-date{font-size:12px;color:var(--soft);}
 .meta-dot{width:3px;height:3px;border-radius:50%;background:var(--soft);}
 
+.title-orange{color:var(--orange) !important;}
 .article-title{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,44px);font-weight:900;color:var(--text);line-height:1.15;letter-spacing:-0.8px;margin-bottom:16px;}
 .article-title em{font-style:italic;color:var(--g1);}
 .article-lead{font-size:17px;color:var(--mid);line-height:1.75;font-weight:300;margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid var(--border);}
@@ -394,6 +396,51 @@ footer a:hover{color:#6FD9A8;}
 .gross-value{font-family:'DM Mono',monospace;font-size:26px;font-weight:600;color:var(--g1);line-height:1.1;}
 .gross-breakdown{font-size:12px;color:var(--soft);line-height:1.6;margin-top:2px;}
 
+
+/* ── TDS & REFUND ROWS ── */
+.br-row-tds{border-top:1px dashed var(--border);margin-top:6px;padding-top:10px;}
+.br-row-final{background:var(--base);margin:0 -22px -22px -22px;padding:12px 22px;border-radius:0 0 var(--r) var(--r);}
+.br-val-refund{font-family:'DM Mono',monospace;font-weight:600;font-size:15px;color:var(--g1);}
+.br-val-payable{font-family:'DM Mono',monospace;font-weight:600;font-size:15px;color:#A32D2D;}
+
+/* ── REFUND COMPARISON CARD ── */
+.refund-compare-card{border-radius:var(--r);padding:20px 24px;margin-bottom:20px;border:1.5px solid var(--border);background:var(--card);}
+.rcc-title{font-size:11px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:var(--soft);margin-bottom:14px;}
+.rcc-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);}
+.rcc-row:last-child{border-bottom:none;}
+.rcc-label{font-size:14px;font-weight:500;color:var(--mid);}
+.rcc-new{font-family:'DM Mono',monospace;font-size:15px;font-weight:600;text-align:right;}
+.rcc-old{font-family:'DM Mono',monospace;font-size:15px;font-weight:600;text-align:right;}
+.rcc-new.refund{color:var(--g1);}
+.rcc-old.refund{color:var(--g1);}
+.rcc-new.payable{color:#A32D2D;}
+.rcc-old.payable{color:#A32D2D;}
+.rcc-winner-badge{font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;letter-spacing:0.5px;}
+.rcc-winner-badge.new{background:var(--new-bg);color:var(--new-text);}
+.rcc-winner-badge.old{background:var(--old-bg);color:var(--old-text);}
+.rcc-headers{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;}
+.rcc-col-labels{display:flex;gap:48px;}
+.rcc-col-label{font-size:11px;font-weight:600;color:var(--soft);text-align:right;min-width:80px;}
+
+
+/* ── COUNTDOWN TIMER ALERT ── */
+.alert-box-timer{flex-direction:column;gap:0;padding:0;overflow:hidden;display:flex;}
+.alert-timer-top{background:#0C3D2E;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;width:100%;align-self:stretch;}
+.alert-timer-label{font-size:12px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,0.7);}
+.alert-countdown{display:flex;align-items:center;gap:8px;}
+.countdown-unit{display:flex;flex-direction:column;align-items:center;gap:2px;}
+.countdown-num{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;color:#FFFFFF;line-height:1;letter-spacing:-1px;}
+.countdown-lbl{font-size:10px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:rgba(255,255,255,0.65);}
+.countdown-sep{font-size:36px;font-weight:700;color:rgba(255,255,255,0.35);line-height:1;padding-bottom:14px;}
+.alert-timer-body{padding:18px 24px;background:var(--orange-bg);width:100%;}
+.alert-timer-body .alert-title{font-size:14px;font-weight:700;color:var(--orange-text);margin-bottom:4px;}
+.alert-timer-body .alert-body{font-size:13px;color:#8B3A10;line-height:1.6;}
+@media(max-width:600px){
+  .alert-timer-top{flex-direction:column;align-items:flex-start;gap:12px;}
+  .countdown-num{font-size:32px;}
+  .countdown-sep{font-size:26px;padding-bottom:10px;}
+}
+
 </style>
 </head>
 <body>
@@ -419,13 +466,32 @@ footer a:hover{color:#6FD9A8;}
     <span class="meta-date">12 min read</span>
   </div>
 
-  <h1 class="article-title">Old vs New Tax Regime<br><em>Which one actually saves you money?</em></h1>
+  <h1 class="article-title"><span class="title-orange">Old vs New Tax Regime</span><br><em>Which one actually saves you money?</em></h1>
 
-  <p class="article-lead">Every year, millions of Indians pay more tax than they legally need to — simply because they never compared the two regimes side by side. Their HR never cared and their CAs are under huge burden to look beyond the filing process. Nobody showed them the numbers. This article does exactly that, with a free calculator at the end so you can find out for your specific situation in under 3 minutes.</p>
+  <p class="article-lead">Every year, millions of Indians pay more tax than they legally need to: simply because they never compared the two regimes side by side. Tax planning rarely gets the attention it deserves. Most people engage with it only at filing time, by which point the decisions that matter have already been made. Nobody showed them the numbers in advance. This article does exactly that, with a <a href="#calculator" style="color:var(--g1);font-weight:600;text-decoration:underline;text-underline-offset:3px;">free calculator</a> at the end so you can find out for your specific situation in under 3 minutes.</p>
 
-  <!-- DEADLINE ALERT -->
-  <div class="alert-box">
-    <div>
+  <!-- DEADLINE ALERT WITH COUNTDOWN -->
+  <div class="alert-box alert-box-timer">
+    <div class="alert-timer-top">
+      <div class="alert-timer-label" id="timer-label">Time left to file your ITR</div>
+      <div class="alert-countdown" id="itr-countdown">
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-days">--</span>
+          <span class="countdown-lbl">Days</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-hours">--</span>
+          <span class="countdown-lbl">Hours</span>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-unit">
+          <span class="countdown-num" id="cd-mins">--</span>
+          <span class="countdown-lbl">Minutes</span>
+        </div>
+      </div>
+    </div>
+    <div class="alert-timer-body" id="timer-body">
       <div class="alert-title">ITR Filing Deadline: July 31, 2026</div>
       <div class="alert-body">This is the last date for individual taxpayers to file their Income Tax Return for FY 2025-26. Miss it and you pay a late fee of ₹5,000. More importantly, you might also miss the chance to pick the right regime and overpay tax unnecessarily.</div>
     </div>
@@ -538,7 +604,7 @@ footer a:hover{color:#6FD9A8;}
 
   <div class="divider"></div>
 
-  <!-- ITR FORM GUIDE — INLINE ACCORDION -->
+  <!-- ITR FORM GUIDE, INLINE ACCORDION -->
   <div class="section-label">Which ITR form for whom?</div>
   <h2 class="section-heading">Find your ITR form in one tap</h2>
   <p class="section-sub">Tap any ITR card to expand details. Tap again to collapse.</p>
@@ -558,7 +624,7 @@ footer a:hover{color:#6FD9A8;}
       </div>
       <div class="itr-inline-detail" id="detail-itr1">
         <div class="itr-detail-title">ITR-1 (Sahaj): For simple salaried taxpayers</div>
-        <div class="itr-detail-body">You qualify if your income is from one employer, one house property, and bank interest — and total income does not exceed ₹50 lakh. This is the simplest form and takes under 15 minutes to file online.</div>
+        <div class="itr-detail-body">You qualify if your income is from one employer, one house property, and bank interest, and total income does not exceed ₹50 lakh. This is the simplest form and takes under 15 minutes to file online.</div>
         <div class="itr-ex">
           <span class="itr-ex-pill">School or college teacher</span>
           <span class="itr-ex-pill">Bank or corporate employee</span>
@@ -627,7 +693,7 @@ footer a:hover{color:#6FD9A8;}
       </div>
       <div class="itr-inline-detail" id="detail-itr4">
         <div class="itr-detail-title">ITR-4 (Sugam): Presumptive taxation for professionals</div>
-        <div class="itr-detail-body">This is your form if you earn independently without being an employee and opt for presumptive taxation (44ADA for professionals, 44AD for small business). Declare a flat percentage of receipts as profit — no detailed books needed. Use the Freelancer calculator tab below to estimate your tax.</div>
+        <div class="itr-detail-body">This is your form if you earn independently without being an employee and opt for presumptive taxation (44ADA for professionals, 44AD for small business). Declare a flat percentage of receipts as profit. No detailed books needed. Use the Freelancer calculator tab below to estimate your tax.</div>
         <div class="itr-ex">
           <span class="itr-ex-pill">Gym trainer</span>
           <span class="itr-ex-pill">Makeup artist</span>
@@ -657,7 +723,7 @@ footer a:hover{color:#6FD9A8;}
   <div class="divider"></div>
 
   <!-- CALCULATOR HEADING -->
-  <div class="calc-intro">
+  <div class="calc-intro" id="calculator">
     <div class="calc-intro-label">Interactive Calculator</div>
     <div class="calc-intro-title">Find out your exact tax<br>under both regimes</div>
     <div class="calc-intro-sub">Salaried? Freelancer? Consultant? Select your type and enter your numbers.</div>
@@ -749,6 +815,18 @@ footer a:hover{color:#6FD9A8;}
           <div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="sec80tta" placeholder="Max ₹10,000" min="0"/></div>
         </div>
       </div>
+      <div class="inner-divider"></div>
+      <div class="card-section-title">Tax Already Paid</div>
+      <div class="grid-2">
+        <div class="field">
+          <label>TDS Deducted by Employer <span class="field-hint">Total TDS shown in Form 16 / salary slips for the year</span></label>
+          <div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="tds_paid" placeholder="e.g. 80000" min="0"/></div>
+        </div>
+        <div class="field">
+          <label>Advance Tax Paid <span class="field-hint">If you paid advance tax directly, leave blank if not applicable</span></label>
+          <div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="advance_tax" placeholder="e.g. 0" min="0"/></div>
+        </div>
+      </div>
       <button class="calc-btn" onclick="calculate()">Calculate My Tax</button>
     </div>
 
@@ -770,6 +848,11 @@ footer a:hover{color:#6FD9A8;}
           <div class="br-row"><span class="br-label">Cess (4%)</span><span class="br-val tax-red" id="n-cess"></span></div>
           <div class="br-row"><span class="br-label strong">Total Tax Payable</span><span class="br-val total-new" id="n-total"></span></div>
           <div class="br-row"><span class="br-label">Effective Tax Rate</span><span class="br-val" id="n-eff"></span></div>
+          <div class="br-row br-row-tds"><span class="br-label">TDS / Advance Tax Paid</span><span class="br-val ded" id="n-tds-show"></span></div>
+          <div class="br-row br-row-final" id="n-final-row">
+            <span class="br-label strong" id="n-final-label">Net Payable / Refund</span>
+            <span class="br-val" id="n-final"></span>
+          </div>
         </div>
         <div class="regime-card" id="old-card">
           <div class="regime-name-label"><span class="rn-dot old"></span>Old Regime</div>
@@ -787,8 +870,14 @@ footer a:hover{color:#6FD9A8;}
           <div class="br-row"><span class="br-label">Cess (4%)</span><span class="br-val tax-red" id="o-cess"></span></div>
           <div class="br-row"><span class="br-label strong">Total Tax Payable</span><span class="br-val total-old" id="o-total"></span></div>
           <div class="br-row"><span class="br-label">Effective Tax Rate</span><span class="br-val" id="o-eff"></span></div>
+          <div class="br-row br-row-tds"><span class="br-label">TDS / Advance Tax Paid</span><span class="br-val ded" id="o-tds-show"></span></div>
+          <div class="br-row br-row-final" id="o-final-row">
+            <span class="br-label strong" id="o-final-label">Net Payable / Refund</span>
+            <span class="br-val" id="o-final"></span>
+          </div>
         </div>
       </div>
+      <div class="refund-compare-card" id="refund-compare-card" style="display:none;"></div>
       <div class="slab-visual">
         <div class="slab-vis-title">Visual Comparison</div>
         <div class="bar-legend">
@@ -810,7 +899,7 @@ footer a:hover{color:#6FD9A8;}
   <div id="calc-presumptive" style="display:none;">
     <div class="calc-tab-body">
       <div class="pres-note">
-        <strong>Section 44ADA / 44AD: Presumptive Taxation in plain words.</strong> If you earn from a profession or small business independently (not as an employee), the government lets you declare a fixed percentage of your gross receipts as profit without maintaining detailed books. Tax is calculated on that declared profit. A CA is still recommended for final filing — but this calculator helps you understand your liability before you go.
+        <strong>Section 44ADA / 44AD: Presumptive Taxation in plain words.</strong> If you earn from a profession or small business independently (not as an employee), the government lets you declare a fixed percentage of your gross receipts as profit without maintaining detailed books. Tax is calculated on that declared profit. A CA is still recommended for final filing, but this calculator helps you understand your liability before you go.
       </div>
 
       <div class="card-section-title">Step 1: Select your income type</div>
@@ -864,14 +953,14 @@ footer a:hover{color:#6FD9A8;}
           <div class="field">
             <label>Payment Mode <span class="field-hint">How do most of your customers pay you? Affects the profit rate for 44AD.</span></label>
             <select id="p-mode" style="max-width:360px;">
-              <option value="digital">Mostly digital (UPI, bank transfer) — 6% rate</option>
-              <option value="cash">Mostly cash — 8% rate</option>
-              <option value="mixed">Mixed (50-50) — 7% blended rate</option>
+              <option value="digital">Mostly digital (UPI, bank transfer), 6% rate</option>
+              <option value="cash">Mostly cash, 8% rate</option>
+              <option value="mixed">Mixed (50-50), 7% blended rate</option>
             </select>
           </div>
         </div>
 
-        <!-- Clean 2x2 grid — always 4 visible fields, all aligned -->
+        <!-- Clean 2x2 grid, always 4 visible fields, all aligned -->
         <div class="grid-2">
           <div class="field">
             <label>Total Annual Receipts / Earnings <span class="field-hint">All money received from clients this year</span></label>
@@ -882,11 +971,11 @@ footer a:hover{color:#6FD9A8;}
             <div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="p-other" placeholder="e.g. 20000" min="0"/></div>
           </div>
           <div class="field">
-            <label>Professional Expenses Paid <span class="field-hint">For your reference only — under presumptive scheme, expenses are not separately deducted</span></label>
+            <label>Professional Expenses Paid <span class="field-hint">For your reference only; under presumptive scheme, expenses are not separately deducted</span></label>
             <div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="p-expenses" placeholder="e.g. 50000" min="0"/></div>
           </div>
           <div class="field">
-            <label>Home Loan Interest <span class="field-hint">Section 24b — if you have a home loan on self-occupied property</span></label>
+            <label>Home Loan Interest <span class="field-hint">Section 24b; if you have a home loan on self-occupied property</span></label>
             <div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="p-hl-2" placeholder="Max ₹2,00,000" min="0"/></div>
           </div>
         </div>
@@ -918,6 +1007,18 @@ footer a:hover{color:#6FD9A8;}
             <div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="p-hl" placeholder="Max ₹2,00,000" min="0"/></div>
           </div>
         </div>
+        <div class="inner-divider"></div>
+        <div class="card-section-title">Tax Already Paid</div>
+        <div class="grid-2">
+          <div class="field">
+            <label>TDS Deducted (if any) <span class="field-hint">TDS cut by clients or any other source this year</span></label>
+            <div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="p-tds" placeholder="e.g. 10000" min="0"/></div>
+          </div>
+          <div class="field">
+            <label>Advance Tax Paid <span class="field-hint">Any advance tax payments made during the year</span></label>
+            <div class="inp-wrap"><span class="inp-prefix">₹</span><input type="number" id="p-advance" placeholder="e.g. 0" min="0"/></div>
+          </div>
+        </div>
         <button class="calc-btn" onclick="calculatePresumptive()">Calculate My Tax</button>
       </div>
     </div>
@@ -941,6 +1042,11 @@ footer a:hover{color:#6FD9A8;}
           <div class="br-row"><span class="br-label">Cess (4%)</span><span class="br-val tax-red" id="p-n-cess"></span></div>
           <div class="br-row"><span class="br-label strong">Total Tax Payable</span><span class="br-val total-new" id="p-n-total"></span></div>
           <div class="br-row"><span class="br-label">Effective Rate on Receipts</span><span class="br-val" id="p-n-eff"></span></div>
+          <div class="br-row br-row-tds"><span class="br-label">TDS / Advance Tax Paid</span><span class="br-val ded" id="p-n-tds-show"></span></div>
+          <div class="br-row br-row-final" id="p-n-final-row">
+            <span class="br-label strong" id="p-n-final-label">Net Payable / Refund</span>
+            <span class="br-val" id="p-n-final"></span>
+          </div>
         </div>
         <div class="regime-card" id="p-old-card">
           <div class="regime-name-label"><span class="rn-dot old"></span>Old Regime</div>
@@ -957,8 +1063,14 @@ footer a:hover{color:#6FD9A8;}
           <div class="br-row"><span class="br-label">Cess (4%)</span><span class="br-val tax-red" id="p-o-cess"></span></div>
           <div class="br-row"><span class="br-label strong">Total Tax Payable</span><span class="br-val total-old" id="p-o-total"></span></div>
           <div class="br-row"><span class="br-label">Effective Rate on Receipts</span><span class="br-val" id="p-o-eff"></span></div>
+          <div class="br-row br-row-tds"><span class="br-label">TDS / Advance Tax Paid</span><span class="br-val ded" id="p-o-tds-show"></span></div>
+          <div class="br-row br-row-final" id="p-o-final-row">
+            <span class="br-label strong" id="p-o-final-label">Net Payable / Refund</span>
+            <span class="br-val" id="p-o-final"></span>
+          </div>
         </div>
       </div>
+      <div class="refund-compare-card" id="p-refund-compare-card" style="display:none;"></div>
       <div class="slab-visual">
         <div class="slab-vis-title">Visual Comparison</div>
         <div class="bar-legend">
@@ -986,12 +1098,12 @@ footer a:hover{color:#6FD9A8;}
     <a href="#">All Topics</a> &nbsp;·&nbsp;
     <a href="#">Newsletter</a>
   </div>
-  <div style="margin-top:12px;font-size:11px;">© 2026 RupeeSense · For informational purposes only. Not financial advice. Tax laws subject to change — always verify with a CA.</div>
+  <div style="margin-top:12px;font-size:11px;">© 2026 RupeeSense · For informational purposes only. Not financial advice. Tax laws subject to change, always verify with a CA.</div>
 </footer>
 
 <script>
 /* ═══════════════════════════════════════
-   RUPEESENSE — Old vs New Regime Article
+   RUPEESENSE , Old vs New Regime Article
    All functions defined exactly once
 ═══════════════════════════════════════ */
 
@@ -1246,6 +1358,61 @@ function calculate() {
   sv('o-slab-tax', fmt(oSlab)); sv('o-rebate', oRebate > 0 ? '- ' + fmt(oRebate) : '\u20b90');
   sv('o-cess', fmt(oCess));     sv('o-total', fmt(oTotal));       sv('o-eff', pct(oEff));
 
+  /* ── TDS / REFUND CALCULATION ── */
+  var tdsPaid = gv('tds_paid') + gv('advance_tax');
+  var nNet = nTotal - tdsPaid;  /* negative = refund, positive = payable */
+  var oNet = oTotal - tdsPaid;
+
+  var tdsDisplay = tdsPaid > 0 ? '- ' + fmt(tdsPaid) : '\u20b90 (not entered)';
+  sv('n-tds-show', tdsDisplay);
+  sv('o-tds-show', tdsDisplay);
+
+  function setFinalRow(finalId, labelId, rowId, net) {
+    var el = document.getElementById(finalId);
+    var lb = document.getElementById(labelId);
+    var row = document.getElementById(rowId);
+    if (!el || !lb || !row) return;
+    if (tdsPaid === 0) {
+      row.style.display = 'none'; return;
+    }
+    row.style.display = 'flex';
+    if (net <= 0) {
+      lb.textContent = 'Tax Refund Due';
+      el.className = 'br-val br-val-refund';
+      el.textContent = fmt(Math.abs(net));
+    } else {
+      lb.textContent = 'Net Tax Payable';
+      el.className = 'br-val br-val-payable';
+      el.textContent = fmt(net);
+    }
+  }
+  setFinalRow('n-final', 'n-final-label', 'n-final-row', nNet);
+  setFinalRow('o-final', 'o-final-label', 'o-final-row', oNet);
+
+  /* ── REFUND COMPARISON CARD ── */
+  var rcc = document.getElementById('refund-compare-card');
+  if (rcc && tdsPaid > 0) {
+    rcc.style.display = 'block';
+    var nIsRefund = nNet <= 0;
+    var oIsRefund = oNet <= 0;
+    var nLabel = nIsRefund ? 'Refund' : 'Payable';
+    var oLabel = oIsRefund ? 'Refund' : 'Payable';
+    var nAmt = fmt(Math.abs(nNet));
+    var oAmt = fmt(Math.abs(oNet));
+    /* Which regime gives better outcome: higher refund or lower payable */
+    var nBetter = nNet < oNet; /* lower net = better (more refund or less payable) */
+    var rccHtml = '<div class="rcc-title">Refund vs Tax Payable , Both Regimes</div>';
+    rccHtml += '<div class="rcc-headers"><span></span><div class="rcc-col-labels"><span class="rcc-col-label" style="color:var(--g1);">New Regime</span><span class="rcc-col-label" style="color:var(--g2);">Old Regime</span></div></div>';
+    rccHtml += '<div class="rcc-row"><span class="rcc-label">Tax Payable</span><div style="display:flex;gap:48px;"><span class="rcc-new ' + (nIsRefund ? 'refund' : 'payable') + '">' + (nIsRefund ? 'Refund: ' : '') + nAmt + '</span><span class="rcc-old ' + (oIsRefund ? 'refund' : 'payable') + '">' + (oIsRefund ? 'Refund: ' : '') + oAmt + '</span></div></div>';
+    rccHtml += '<div class="rcc-row"><span class="rcc-label">Better outcome</span><div style="display:flex;gap:48px;align-items:center;"><span>' + (nBetter ? '<span class="rcc-winner-badge new">New Regime</span>' : '<span style="color:var(--soft);font-size:13px;min-width:80px;text-align:right;">&#8212;</span>') + '</span><span>' + (!nBetter ? '<span class="rcc-winner-badge old">Old Regime</span>' : '<span style="color:var(--soft);font-size:13px;min-width:80px;text-align:right;">&#8212;</span>') + '</span></div></div>';
+    if (nIsRefund || oIsRefund) {
+      rccHtml += '<div style="margin-top:10px;font-size:13px;color:var(--mid);line-height:1.6;">Claim your refund by filing your ITR before July 31, 2026. Refunds are typically processed within 20-45 days of filing.</div>';
+    }
+    rcc.innerHTML = rccHtml;
+  } else if (rcc) {
+    rcc.style.display = 'none';
+  }
+
   var bc = document.getElementById('bar-content');
   if (bc) bc.innerHTML = buildBars(
     [{label:'Tax: New Regime', val:nTotal, cls:'new-fill'}, {label:'Tax: Old Regime', val:oTotal, cls:'old-fill'}],
@@ -1286,6 +1453,8 @@ function resetCalc() {
   if (res) res.className = 'results';
   document.querySelectorAll('#calc-salaried input[type=number]').forEach(function(i){ i.value = ''; });
   recalcGross();
+  var rcc = document.getElementById('refund-compare-card'); if (rcc) rcc.style.display = 'none';
+  ['n-final-row','o-final-row'].forEach(function(id){ var el=document.getElementById(id); if(el) el.style.display='none'; });
   document.querySelectorAll('#results .winner-badge').forEach(function(b){ b.remove(); });
   var tabs = document.querySelector('.calc-type-tabs');
   if (tabs) tabs.scrollIntoView({behavior:'smooth', block:'start'});
@@ -1307,8 +1476,8 @@ function selectProf(el, scheme, rate) {
   if (schemeLabel) {
     schemeLabel.style.display = 'block';
     schemeLabel.textContent = scheme === '44ADA'
-      ? 'Section 44ADA — 50% of gross receipts treated as taxable profit'
-      : 'Section 44AD — 8% (cash) or 6% (digital) of turnover treated as taxable profit';
+      ? 'Section 44ADA , 50% of gross receipts treated as taxable profit'
+      : 'Section 44AD , 8% (cash) or 6% (digital) of turnover treated as taxable profit';
   }
 }
 
@@ -1395,6 +1564,54 @@ function calculatePresumptive() {
   sv('p-o-total',   fmt(oTotal));
   sv('p-o-eff',     pct(oEff));
 
+  /* ── TDS / REFUND , PRESUMPTIVE ── */
+  var pTdsPaid = gv('p-tds') + gv('p-advance');
+  var pnNet = nTotal - pTdsPaid;
+  var poNet = oTotal - pTdsPaid;
+  var pTdsDisplay = pTdsPaid > 0 ? '- ' + fmt(pTdsPaid) : '\u20b90 (not entered)';
+  sv('p-n-tds-show', pTdsDisplay);
+  sv('p-o-tds-show', pTdsDisplay);
+
+  function setPFinalRow(finalId, labelId, rowId, net, tds) {
+    var el = document.getElementById(finalId);
+    var lb = document.getElementById(labelId);
+    var row = document.getElementById(rowId);
+    if (!el || !lb || !row) return;
+    if (tds === 0) { row.style.display = 'none'; return; }
+    row.style.display = 'flex';
+    if (net <= 0) {
+      lb.textContent = 'Tax Refund Due';
+      el.className = 'br-val br-val-refund';
+      el.textContent = fmt(Math.abs(net));
+    } else {
+      lb.textContent = 'Net Tax Payable';
+      el.className = 'br-val br-val-payable';
+      el.textContent = fmt(net);
+    }
+  }
+  setPFinalRow('p-n-final', 'p-n-final-label', 'p-n-final-row', pnNet, pTdsPaid);
+  setPFinalRow('p-o-final', 'p-o-final-label', 'p-o-final-row', poNet, pTdsPaid);
+
+  var prcc = document.getElementById('p-refund-compare-card');
+  if (prcc && pTdsPaid > 0) {
+    prcc.style.display = 'block';
+    var pnIsRefund = pnNet <= 0;
+    var poIsRefund = poNet <= 0;
+    var pnAmt = fmt(Math.abs(pnNet));
+    var poAmt = fmt(Math.abs(poNet));
+    var pnBetter = pnNet < poNet;
+    var prccHtml = '<div class="rcc-title">Refund vs Tax Payable , Both Regimes</div>';
+    prccHtml += '<div class="rcc-headers"><span></span><div class="rcc-col-labels"><span class="rcc-col-label" style="color:var(--g1);">New Regime</span><span class="rcc-col-label" style="color:var(--g2);">Old Regime</span></div></div>';
+    prccHtml += '<div class="rcc-row"><span class="rcc-label">Tax Position</span><div style="display:flex;gap:48px;"><span class="rcc-new ' + (pnIsRefund ? 'refund' : 'payable') + '">' + (pnIsRefund ? 'Refund: ' : 'Payable: ') + pnAmt + '</span><span class="rcc-old ' + (poIsRefund ? 'refund' : 'payable') + '">' + (poIsRefund ? 'Refund: ' : 'Payable: ') + poAmt + '</span></div></div>';
+    prccHtml += '<div class="rcc-row"><span class="rcc-label">Better outcome</span><div style="display:flex;gap:48px;align-items:center;"><span>' + (pnBetter ? '<span class="rcc-winner-badge new">New Regime</span>' : '<span style="color:var(--soft);font-size:13px;min-width:80px;text-align:right;">&#8212;</span>') + '</span><span>' + (!pnBetter ? '<span class="rcc-winner-badge old">Old Regime</span>' : '<span style="color:var(--soft);font-size:13px;min-width:80px;text-align:right;">&#8212;</span>') + '</span></div></div>';
+    if (pnIsRefund || poIsRefund) {
+      prccHtml += '<div style="margin-top:10px;font-size:13px;color:var(--mid);line-height:1.6;">File ITR-4 before July 31, 2026 to claim your refund. Refunds are typically processed within 20-45 days of filing.</div>';
+    }
+    prcc.innerHTML = prccHtml;
+  } else if (prcc) {
+    prcc.style.display = 'none';
+  }
+
   var pbc = document.getElementById('p-bar-content');
   if (pbc) pbc.innerHTML = buildBars(
     [{label:'Tax: New Regime', val:nTotal, cls:'new-fill'}, {label:'Tax: Old Regime', val:oTotal, cls:'old-fill'}],
@@ -1426,6 +1643,8 @@ function resetPresumptive() {
   var pres = document.getElementById('p-results');
   if (pres) pres.className = 'results';
   document.querySelectorAll('#calc-presumptive input[type=number]').forEach(function(i){ i.value = ''; });
+  var prcc = document.getElementById('p-refund-compare-card'); if (prcc) prcc.style.display = 'none';
+  ['p-n-final-row','p-o-final-row'].forEach(function(id){ var el=document.getElementById(id); if(el) el.style.display='none'; });
   document.querySelectorAll('#p-results .winner-badge').forEach(function(b){ b.remove(); });
   document.querySelectorAll('.prof-big-card').forEach(function(c){ c.classList.remove('selected'); });
   var wrap = document.getElementById('pres-inputs-wrap');
@@ -1438,6 +1657,82 @@ function resetPresumptive() {
 
 /* ── INIT ── */
 showScenario('new');
+
+
+/* ── ITR DEADLINE COUNTDOWN ── */
+(function() {
+  var regularDeadline = new Date('2026-07-31T23:59:59+05:30'); /* July 31 IST */
+  var belatedDeadline = new Date('2026-12-31T23:59:59+05:30'); /* Dec 31 IST */
+
+  function pad(n) { return n < 10 ? '0' + n : String(n); }
+
+  function setPhase(phase) {
+    /* phase: 'regular' | 'belated' | 'expired' */
+    var label   = document.getElementById('timer-label');
+    var body    = document.getElementById('timer-body');
+    var timerTop = document.querySelector('.alert-timer-top');
+
+    if (phase === 'belated') {
+      if (label) label.textContent = 'Time left to file belated ITR (with late fee)';
+      if (timerTop) timerTop.style.background = '#5C3D00'; /* dark amber — signals caution */
+      if (body) body.innerHTML = ''
+        + '<div class="alert-title">Belated ITR Deadline: December 31, 2026</div>'
+        + '<div class="alert-body">'
+        + 'The regular July 31 deadline has passed. You can still file a belated ITR under Section 139(4) '
+        + 'with a late fee of ₹5,000 (reduced to ₹1,000 if your total income is below ₹5 lakh). '
+        + 'File before December 31, 2026 to avoid losing your refund claim and to keep your tax record clean.'
+        + '</div>';
+    } else if (phase === 'expired') {
+      if (label) label.textContent = 'Both ITR filing windows have closed';
+      if (timerTop) timerTop.style.background = '#3D3D3D';
+      var cd = document.getElementById('itr-countdown');
+      if (cd) cd.innerHTML = '<span style="font-size:16px;font-weight:600;color:rgba(255,255,255,0.8);letter-spacing:0.5px;">FY 2025-26 filing window closed</span>';
+      if (body) body.innerHTML = ''
+        + '<div class="alert-title">Filing Window Closed for FY 2025-26</div>'
+        + '<div class="alert-body">'
+        + 'Both the regular (July 31) and belated (December 31) ITR deadlines for FY 2025-26 have passed. '
+        + 'If you still need to file, contact a CA about filing an updated return (ITR-U) which is permitted '
+        + 'up to 2 years from the end of the assessment year, with an additional tax of 25% to 50%.'
+        + '</div>';
+    }
+  }
+
+  function tick() {
+    var now  = new Date();
+    var diff;
+
+    if (now <= regularDeadline) {
+      /* Phase 1: Regular deadline still active */
+      diff = regularDeadline - now;
+    } else if (now <= belatedDeadline) {
+      /* Phase 2: Between July 31 and Dec 31 — count to belated deadline */
+      if (!tick._belatedPhaseSet) {
+        setPhase('belated');
+        tick._belatedPhaseSet = true;
+      }
+      diff = belatedDeadline - now;
+    } else {
+      /* Phase 3: Both deadlines passed */
+      setPhase('expired');
+      return;
+    }
+
+    var days  = Math.floor(diff / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var mins  = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+
+    var dEl = document.getElementById('cd-days');
+    var hEl = document.getElementById('cd-hours');
+    var mEl = document.getElementById('cd-mins');
+    if (dEl) dEl.textContent = pad(days);
+    if (hEl) hEl.textContent = pad(hours);
+    if (mEl) mEl.textContent = pad(mins);
+  }
+
+  tick._belatedPhaseSet = false;
+  tick();
+  setInterval(tick, 1000 * 30); /* refresh every 30s */
+})();
 
 </script>
 </body>
